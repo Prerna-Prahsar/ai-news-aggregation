@@ -8,7 +8,6 @@ from app.workers.ingestion_worker import ingest_news
 
 router = APIRouter()
 
-
 @router.get("/stats", response_model=DashboardStats)
 async def get_stats(db: AsyncSession = Depends(get_db)):
     total_news = (await db.execute(
